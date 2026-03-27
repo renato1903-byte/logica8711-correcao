@@ -12,7 +12,11 @@ int main(){
  mult = num1 * num2;
  div = num1 / num2;
 
-
+ std::cout<<soma<<std::endl;
+ std::cout<<subt<<std::endl;
+ std::cout<<subt<<std::endl;
+ std::cout<<div<<std::endl;
+ 
 
     return 0;
 }
