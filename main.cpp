@@ -3,21 +3,13 @@
 
 int main(){
 
-    double d = 8.6952231456;
+  int num1 = 8;
+  int num2 = 2; 
 
-       std::cout<<std::fixed<<std::setprecision(10)<<d<<std::endl;
-
-
-   int a = 8;
-   //int número inteiro
-   float b = 9.6;
-   //float número de ponto flutuante ocupa 4bytes.
-   double c = 4.6;
-   //double ocupa 8bytes.
-
-   std::cout<<a<<std::endl;
-   std::cout<<b<<std::endl;
-   std::cout<<c<<std::endl;
+  std::cout<<num1 + num2<<std::endl;
+  std::cout<<num1 - num2<<std::endl;
+  std::cout<<num1 * num2<<std::endl;
+  std::cout<<num1 / num2<<std::endl;
 
     return 0;
 }
