@@ -1,6 +1,12 @@
 #include<iostream>
+#include<iomanip>
 
 int main(){
+
+    double d = 8.6952231456;
+
+       std::cout<<std::fixed<<std::setprecision(10)<<d<<std::endl;
+
 
    int a = 8;
    //int número inteiro
@@ -8,7 +14,6 @@ int main(){
    //float número de ponto flutuante ocupa 4bytes.
    double c = 4.6;
    //double ocupa 8bytes.
-
 
    std::cout<<a<<std::endl;
    std::cout<<b<<std::endl;
