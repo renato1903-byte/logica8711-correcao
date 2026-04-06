@@ -1,12 +1,18 @@
 #include<iostream>
+#include<string>
 
 int main(){
 
-  std::string nome = "Renato";
-  std::string sobrenome = "Chassot";
+std::string nome;
+std::string sobrenome = " Chassot";
 
-   std::cout<<nome + " " + sobrenome<<std::endl;
-    
+std::cout<<"Digite seu nome: "<<std::endl;
+std::cin>>nome;
 
-    return 0;
+std::cout<<nome.append(sobrenome);
+
+
+
+  return 0;
+  
 }
