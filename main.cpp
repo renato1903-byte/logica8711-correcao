@@ -8,6 +8,8 @@ int main(){
   std::cout<<nome[0]<<std::endl;
   std::cout<<nome[2]<<std::endl;
   std::cout<<nome[nome.length() - 1]<<std::endl;
+  nome[0] = 'R';
+  std::cout<<nome<<std::endl;
 
 
 
