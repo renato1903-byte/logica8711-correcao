@@ -3,12 +3,13 @@
 
 int main(){
 
-  std::string nome = "Renato";
+  int renato[5] = {10,20,30,40,50};
 
-  std::cout<<"Nome tem: "<<nome.length()<<" letras."<<std::endl;
-  std::cout<<"Nome tem: "<<nome.size()<<" letras."<<std::endl;
+  std::cout<<renato[1];
 
-  
+
+
+
 
 
 
