@@ -3,18 +3,20 @@
 
 int main(){
 
-  std::string nome = "Renato";
+  float n1, n2, n3, media;
 
-  std::cout<<nome[0]<<std::endl;
-  std::cout<<nome[2]<<std::endl;
-  std::cout<<nome[nome.length() - 1]<<std::endl;
-  nome[0] = 'R';
-  std::cout<<nome<<std::endl;
-  std::cout<<nome.at(0)<<std::endl;
-  nome.at(0) = 'H';
-  std::cout<<nome;
+  std::cout<<"Digite 3 notas: ";
+  std::cin>>n1>>n2>>n3;
 
+  media = (n1 + n2 + n3 ) / 3;
+  std::cout<<"Media: "<<media<<std::endl;
 
+  if (media >= 7) {
+    std::cout<<"Aprovado"<<std::endl;
+    }  else  {
+      std::cout<<"Reprovado"<<std::endl;
+      
+    }
 
 
   return 0;
