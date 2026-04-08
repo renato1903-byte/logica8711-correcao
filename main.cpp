@@ -1,22 +1,14 @@
 #include<iostream>
-#include<string>
+#include<cmath>
 
 int main(){
 
-  float n1, n2, n3, media;
+  int a = 5;
+  int b = 3;
 
-  std::cout<<"Digite 3 notas: ";
-  std::cin>>n1>>n2>>n3;
+  std::cout<<std::max(a, b)<<std::endl;
+  
 
-  media = (n1 + n2 + n3 ) / 3;
-  std::cout<<"Media: "<<media<<std::endl;
-
-  if (media >= 7) {
-    std::cout<<"Aprovado"<<std::endl;
-    }  else  {
-      std::cout<<"Reprovado"<<std::endl;
-      
-    }
 
 
   return 0;
