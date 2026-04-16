@@ -3,25 +3,28 @@
 #include<ctime>
 
 int main(){
+    int jogador, pc;
 
-   std::srand(std::time(0));
-   int numero = std::rand() % 100 + 1;
-   int chute;
+    std::srand(std::time(0));
+    pc = std::rand() % 3 + 1;
 
-  std::cout<<"Advinhe (1 a 100): ";
+    std::cout<<"1-Pedra 2-Papel 3-Tesoura: ";
+    std::cin>>jogador;
 
-  do {
-    std::cin>>chute;
+    std::cout<<"PC escolheu: "<<pc<<std::endl;
 
-    if(chute > numero)std::cout<<"Menor!\n";
-    else if(chute < numero)std::cout<<"Maior!\n";
+    if(jogador == pc){
+      std::cout<<"Empate!";
+    }else if(
+        (jogador == 1 && pc == 2) ||
+        (jogador == 2 && pc == 1) ||
+        (jogador == 3 && pc == 2)
 
-  } while(chute != numero);
-
-  std::cout<<"Acertou!";
-
-
-
+    ) {
+          std::cout<<"Você venceu!";
+    }else{
+          std::cout<<"Você perdeu!";
+    }
 
 
    return 0;
