@@ -1,16 +1,29 @@
 #include<iostream>
+#include<cstdlib>
+#include<ctime>
 
 int main(){
 
-   int myNumbers[5] = {10, 20, 30, 40, 50};
-    //for(int num : myNumbers){
-    // std::cout<<num<<std::endl;
-    //for(int i = 0; i < 5; ++i){
-    //std::cout<<myNumbers[1]<<std::endl;
-    //}
-    
-    std::cout<<myNumbers[3];
+   std::srand(std::time(0));
+   int numero = std::rand() % 100 + 1;
+   int chute;
 
-  return 0;
+  std::cout<<"Advinhe (1 a 100): ";
+
+  do {
+    std::cin>>chute;
+
+    if(chute > numero)std::cout<<"Menor!\n";
+    else if(chute < numero)std::cout<<"Maior!\n";
+
+  } while(chute != numero);
+
+  std::cout<<"Acertou!";
+
+
+
+
+
+   return 0;
 
 }
