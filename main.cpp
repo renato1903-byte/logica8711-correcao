@@ -3,13 +3,15 @@
 
 int main(){
       
-int numeros[5] = {10, 20, 30, 40, 50};
+std::string carros[5] = {"Volvo", "BMW", "Ford", "Chevrolet", "Fiat"};
 
-int tamanho = std::size(numeros);
-
-for(int i = 0; i < tamanho; i++ ){
-    std::cout<<numeros[i]<<std::endl;
+for(int i = 0; i < 5; i++){
+    std::cout<<carros[i]<<std::endl;
 }
+
+
+
+
 
    return 0;
 
