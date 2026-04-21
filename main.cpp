@@ -1,14 +1,19 @@
 #include<iostream>
-#include<string>
 
 int main(){
       
- std::string letras[2][4] = {
-    {"A", "B", "C", "D"},
-    {"E", "F", "G", "H"}
- };
+      int num;
 
- std::cout<<letras[1][0]<<std::endl;
+  do{
+    std::cout<<"Digite um valor para num: "<<std::endl;
+    std::cin>>num;
+
+    if(num < 1 || num > 10){
+      std::cout<<"Entrada inválida!!"<<std::endl;
+    }
+  }while(num < 1 || num > 10);{
+    std::cout<<"Obrigado!! Você escolheu o número: "<<num<<std::endl;
+  }
 
 
    return 0;
