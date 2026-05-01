@@ -1,34 +1,21 @@
 #include<iostream>
 
+
 int main(){
-      
-    int choice;
-    float temp, converted;
+    
+    int totalSeconds;
 
-    std::cout<<"----- Temperature converter -----"<<std::endl;
-    std::cout<<"1: Celsius to fahrenheit"<<std::endl;
-    std::cout<<"2: Fahrenheit to Celsius"<<std::endl;
-    std::cout<<"Choose an option (1 or 2)"<<std::endl;
-    std::cin>>choice;
+    std::cout<<"Enter total seconds: "<<std::endl;
+    std::cin>>totalSeconds;
 
-    if(choice == 1){
-      std::cout<<"Enter temperature in Celsius"<<std::endl;
-      std::cin>>temp;
-      converted = (temp * 1.8) + 32;
-      std::cout<<"Enter temperature in Fahrenheit"<<std::endl;
-      std::cin>>temp;
-    }else if (choice == 2){
-        std::cout<<"Enter temperature in Fahrenheit"<<std::endl;
-        std::cin>>temp;
-        converted = (temp - 32) / 1.8;
-        std::cout<<temp<<"F is "<<converted<<" C."<<std::endl;
-    }else{
-      std::cout<<"Invalid Option! Please restart."<<std::endl;
-    }
+    int minutes = totalSeconds / 60;
+    int seconds = totalSeconds % 60;
 
+    std::cout<<"Time: "<<minutes<<" minutes and "<<seconds<<" seconds."<<std::endl;
+ 
+  
 
-
-
+  
 
    return 0;
 
