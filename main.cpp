@@ -34,5 +34,32 @@ void exibirResultado(float &a, float&b){
     std::cout<<"3 - Multiplicar"<<std::endl;
     std::cout<<"4 - Dividir"<<std::endl;
     std::cin>>op;
-}
 
+    switch(op){
+        case 1:
+        std::cout<<"O resultado é: "<<somar(a, b)<<std::endl;
+        break;
+        case 2:
+        std::cout<<"O resultado é: "<<subtrair(a, b)<<std::endl;
+        break;
+        case 3:
+        std::cout<<"O resultado é: "<<multiplicar(a, b)<<std::endl;
+        break;
+        case 4:
+        std::cout<<"O resultado é: "<<dividir(a, b)<<std::endl;
+        break;
+        default:
+        std::cout<<"Voce digitou um valor invalido!"<<std::endl;
+
+    }
+}
+int main(){
+
+    float num1 = 0, num2 = 0;
+    exibirResultado(num1, num2);
+
+
+
+
+    return 0;
+}
