@@ -1,69 +1,15 @@
 #include<iostream>
 
-float somar(float a, float b){
-    return a + b;
-}
-
-float subtrair(float a, float b){
-    return a - b;
-}
-
-float multiplicar(float a, float b){
-    return a * b;
-}
-
-float dividir(float a, float b){
-    if(b == 0){
-        std::cout<<"Não é possivel dividir por 0!"<<std::endl;
-    }else{
-    return a / b;
-    }
-}
-
-void coletarNumeros(float &a, float &b){
-    std::cout<<"Digite um valor para a: "<<std::endl;
-    std::cin>>a;
-
-    std::cout<<"Digite um valor para b: "<<std::endl;
-    std::cin>>b;
-}
-
-void exibirResultado(float &a, float&b){
-    coletarNumeros(a, b);
-
-    int op;
-    std::cout<<"Digite uma opcao: "<<std::endl;
-    std::cout<<"1 - Somar"<<std::endl;
-    std::cout<<"2 - Subtrair"<<std::endl;
-    std::cout<<"3 - Multiplicar"<<std::endl;
-    std::cout<<"4 - Dividir"<<std::endl;
-    std::cin>>op;
-
-    switch(op){
-        case 1:
-        std::cout<<"O resultado é: "<<somar(a, b)<<std::endl;
-        break;
-        case 2:
-        std::cout<<"O resultado é: "<<subtrair(a, b)<<std::endl;
-        break;
-        case 3:
-        std::cout<<"O resultado é: "<<multiplicar(a, b)<<std::endl;
-        break;
-        case 4:
-        std::cout<<"O resultado é: "<<dividir(a, b)<<std::endl;
-        break;
-        default:
-        std::cout<<"Voce digitou um valor invalido!"<<std::endl;
-
-    }
-}
 int main(){
 
-    float num1 = 0, num2 = 0;
-    exibirResultado(num1, num2);
+        int numero, sorteado = 42;
 
+        do{
+            std::cout<<"Advinhe: ";
+            std::cin>>numero;
+            if(numero < sorteado) std::cout<<"Maior!"<<std::endl;
+            else if(numero > sorteado) std::cout<<"Menor!"<<std::endl;
+        }while(numero != sorteado);
 
-
-
-    return 0;
+        std::cout<<"Acertou!!"<<std::endl;
 }
