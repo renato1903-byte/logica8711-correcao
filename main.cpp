@@ -1,37 +1,16 @@
 #include<iostream>
-#include<windows.h>
-
-int encontrarMaior(int arr[], int tamanho){
-    int maior = arr[0];
-
-    for(int i = 1; i < tamanho; i++){
-        if(arr[i] > maior){
-            maior = arr[i];
-        }
-    }
-    
-    return maior;
-}
+#include<tuple>
+#include<string>
 
 int main(){
+    std::tuple<int, std::string, double> aluno(1, "Renato", 9.5);
 
-    SetConsoleOutputCP(CP_UTF8);
-    SetConsoleCP(CP_UTF8);
-
-    int numeros[5];
-    std::cout<<"Digite 5 números: "<<std::endl;
-        for(int i = 0; i < 5; i++){
-            std::cout<<"Digite o número "<<(i + 1)<<": ";
-            std::cin>>numeros[i];
-        }
-
-
-
-    std::cout<<"Maior número: "<<encontrarMaior(numeros, 5)<<std::endl;
+    std::cout<<"ID: "<<std::get<0>(aluno)<<"\n";
+    std::cout<<"Nome: "<<std::get<1>(aluno)<<"\n";
+    std::cout<<"Nota: "<<std::get<2>(aluno)<<"\n";
 
     return 0;
 }
-
  
 
 
