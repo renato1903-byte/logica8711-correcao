@@ -1,30 +1,54 @@
 #include<iostream>
-   
-int quadrado(int n){
-    return n * n;
+
+bool ehPrimo(int numero){
+    if(numero <= 1){
+        return false;
+    }
+    for(int i = 2; i < numero; i++){
+        if(numero % i == 0){
+            return false;
+        }
+    }
+    return true;
 }
 
     int main(){
-        
-        std::cout<<"Quadrado de 5: "<<quadrado(5)<<std::endl;
-        std::cout<<"Quadrado de 8: "<<quadrado(8)<<std::endl;
-        std::cout<<"Quadrado de 10: "<<quadrado(10)<<std::endl;
+        int numero;
+        std::cout<<"Digite um número: "<<std::endl;
+        std::cin>>numero;
 
-
-
-
-
-
-
-
-
-
-
-
-
+        if(ehPrimo(numero)){
+            std::cout<<numero<<"é primo!"<<std::endl;
+            
+        }else{
+            std::cout<<numero<<"Não é primo!"<<std::endl;
+        }
 
 return 0;
     }
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+        
+        
 
 
     
