@@ -20,7 +20,7 @@ int main(){
             std::cout<<"O número "<<numeroUsuario<<" tem "<<contarDigitos(numeroUsuario)<<"digitos.\n";
         }
 
-        std::cout<<"O número "<<numero<<" tem "<<contarDigitos(numero)<<"digitos.\n";
+        std::cout<<"O número "<<numeroUsuario<<" tem "<<contarDigitos(numero)<<"digitos.\n";
 
     return 0;
 }
