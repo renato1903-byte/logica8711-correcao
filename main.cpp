@@ -3,12 +3,12 @@
 
 int main(){
 
-     int numero = 1;
+     int numero = 42;
+     int* ptr = &numero;
 
-     std::cout<<"numero: "<<numero<<std::endl;
-     std::cout<<"Endereço: "<<&numero<<std::endl;
+     std::cout<<"Acessar via variavel: "<<numero<<std::endl;
+     std::cout<<"Acessar via ponteiro: "<<*ptr<<std::endl;
 
-     
      
      
      return 0;
