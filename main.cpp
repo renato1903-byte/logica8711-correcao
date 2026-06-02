@@ -1,122 +1,78 @@
-#include<iostream>
+#include <iostream>
+#include <vector>
+#include <conio.h>
 
- void mostrar(int sudoku[9][9]){
-        for(int i = 0; i < 9; i++){
-            for(int j = 0; j < 9; j++){
-                std::cout<<sudoku[i][j]<<" ";
-            }
-            std::cout<<std::endl;
-        }
-    }
+using namespace std;
 
-bool linhaValida(int sudoku[9][9], int linha, int numero){
-    for(int i = 0; i < 9; i++){
-        if(sudoku[linha][i] == numero)
-        return false;
-    }
-    return true;
-}
-
-bool colunaValida(int sudoku [9][9], int coluna, int numero){
-    for(int i = 0; i < 9; i++){
-        if(sudoku[i][coluna] == numero)
-        return false;
-    }
-    return true;
-}
-
-bool blocoValido(int sudoku[9][9], int linha, int coluna, int numero){
-        int inicioLinha = linha - linha % 3;
-        int inicioColuna = coluna - coluna % 3;
-
-        for(int i = 0; i < 3; i++){
-            for(int j = 0; j < 3; i++){
-                if(sudoku[inicioLinha + i][inicioColuna + j] == numero)
-                return false;
-            }
-        }
-        return true;
-}
-
-bool podeColocar(int sudoku[9][9], int linha, int coluna, int numero) {
-    return linhaValida(sudoku, linha, numero) &&
-           colunaValida(sudoku, coluna, numero) &&
-           blocoValido(sudoku, linha, coluna, numero);
-}
-
-int main(){
-    int sudoku[9][9] = {
-        {5,3,0,0,7,0,0,0,0},
-        {6,0,0,1,9,5,0,0,0},
-        {0,9,8,0,0,0,0,6,0},
-        {8,0,0,0,6,0,0,0,3},
-        {4,0,0,8,0,3,0,0,1},
-        {7,0,0,0,2,0,0,0,6},
-        {0,6,0,0,0,0,2,8,0},
-        {0,0,0,4,1,9,0,0,5},
-        {0,0,0,0,8,0,0,7,9}
+int main() {
+    vector<string> mapa = {
+        "####################",
+        "#........#.........#",
+        "#.######.#.######..#",
+        "#................. #",
+        "#.######.#.######..#",
+        "#........#.........#",
+        "####################"
     };
 
+    int x = 1;
+    int y = 1;
+    int pontos = 0;
 
+    while (true) {
+        system("cls");
 
-while(true) {
-        mostrar(sudoku);
-
-        int linha, coluna, numero;
-
-        std::cout << "\nLinha (0-8): ";
-        std::cin >> linha;
-
-        std::cout << "Coluna (0-8): ";
-        std::cin >> coluna;
-
-        std::cout << "Numero (1-9): ";
-        std::cin >> numero;
-
-        if(linha < 0 || linha > 8 ||
-           coluna < 0 || coluna > 8 ||
-           numero < 1 || numero > 9) {
-            std::cout << "Entrada invalida!\n";
-            continue;
+        for (int i = 0; i < mapa.size(); i++) {
+            for (int j = 0; j < mapa[i].size(); j++) {
+                if (i == y && j == x)
+                    cout << 'C';
+                else
+                    cout << mapa[i][j];
+            }
+            cout << endl;
         }
 
-        if(sudoku[linha][coluna] != 0) {
-            std::cout << "Posicao ja preenchida!\n";
-            continue;
+        cout << "\nPontos: " << pontos << endl;
+        cout << "W A S D para mover | Q para sair\n";
+
+        char tecla = tolower(_getch());
+
+        int novoX = x;
+        int novoY = y;
+
+        if (tecla == 'w') novoY--;
+        else if (tecla == 's') novoY++;
+        else if (tecla == 'a') novoX--;
+        else if (tecla == 'd') novoX++;
+        else if (tecla == 'q') break;
+
+        if (mapa[novoY][novoX] != '#') {
+            x = novoX;
+            y = novoY;
+
+            if (mapa[y][x] == '.') {
+                pontos++;
+                mapa[y][x] = ' ';
+            }
         }
 
-        if(podeColocar(sudoku, linha, coluna, numero)) {
-            sudoku[linha][coluna] = numero;
-        } else {
-            std::cout << "Movimento invalido!\n";
+        bool venceu = true;
+        for (auto linha : mapa) {
+            for (char c : linha) {
+                if (c == '.') {
+                    venceu = false;
+                    break;
+                }
+            }
+        }
+
+        if (venceu) {
+            system("cls");
+            cout << "PARABENS! VOCE COLETOU TODOS OS PONTOS!\n";
+            cout << "Pontuacao final: " << pontos << endl;
+            break;
         }
     }
-    
+
     return 0;
 }
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-        
-        
-
-
-    
-        
