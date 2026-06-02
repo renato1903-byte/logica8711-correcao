@@ -1,78 +1,32 @@
 #include <iostream>
-#include <vector>
-#include <conio.h>
+#include <string>
+#include <cctype>
+bool ehPalindromo(std::string s){
+     int inicio = 0;
+     int fim = s.length() - 1;
 
-using namespace std;
+     while(inicio < fim){
+          if(s[inicio] != s[fim]){
+               return false;
+          }
+          inicio++;
+          fim--;
+     }
+     return true;
+}
 
-int main() {
-    vector<string> mapa = {
-        "####################",
-        "#........#.........#",
-        "#.######.#.######..#",
-        "#................. #",
-        "#.######.#.######..#",
-        "#........#.........#",
-        "####################"
-    };
 
-    int x = 1;
-    int y = 1;
-    int pontos = 0;
+int main(){
 
-    while (true) {
-        system("cls");
+     std::string palavra;
+     std::cout<<"Digite uma palavra: "<<std::endl;
+     std::cin>>palavra;
 
-        for (int i = 0; i < mapa.size(); i++) {
-            for (int j = 0; j < mapa[i].size(); j++) {
-                if (i == y && j == x)
-                    cout << 'C';
-                else
-                    cout << mapa[i][j];
-            }
-            cout << endl;
-        }
+     if(ehPalindromo(palavra)){
+          std::cout<<"Eh um palindromo!"<<std::endl;
+     }else{
+          std::cout<<"Não eh um palindromo!"<<std::endl;
+     }
 
-        cout << "\nPontos: " << pontos << endl;
-        cout << "W A S D para mover | Q para sair\n";
-
-        char tecla = tolower(_getch());
-
-        int novoX = x;
-        int novoY = y;
-
-        if (tecla == 'w') novoY--;
-        else if (tecla == 's') novoY++;
-        else if (tecla == 'a') novoX--;
-        else if (tecla == 'd') novoX++;
-        else if (tecla == 'q') break;
-
-        if (mapa[novoY][novoX] != '#') {
-            x = novoX;
-            y = novoY;
-
-            if (mapa[y][x] == '.') {
-                pontos++;
-                mapa[y][x] = ' ';
-            }
-        }
-
-        bool venceu = true;
-        for (auto linha : mapa) {
-            for (char c : linha) {
-                if (c == '.') {
-                    venceu = false;
-                    break;
-                }
-            }
-        }
-
-        if (venceu) {
-            system("cls");
-            cout << "PARABENS! VOCE COLETOU TODOS OS PONTOS!\n";
-            cout << "Pontuacao final: " << pontos << endl;
-            break;
-        }
-    }
-
-    return 0;
+     return 0;
 }
