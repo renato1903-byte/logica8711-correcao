@@ -1,15 +1,63 @@
 #include <iostream>
-
-int horner(int* coeficiente, int grau, int x){
-    int resultado = coeficiente[grau];
-    for(int i = grau - 1; i >= 0; i--){
-        resultado = resultado * x + coeficiente[i];
-    }
-    return resultado;
-}
+#include <string>
+#include <cctype>
 
 int main(){
-    int coef[] = {5, 4, 3, 3};
-    std::cout<<"p(2) = "<<horner(coef, 3, 2)<<std::endl;
+    std::string palavra = "programacao";
+    std::string advinhada = "";
+    int erros = 0;
+    int maxErros = 6;
+    bool ganhou = false;
+
+    for(int i = 0; i < palavra.length(); i++){
+        advinhada += "_";
+    }
+    std::cout<<"==== JOGO DA FORCA ===="<<std::endl;
+    std::cout<<"Advinhe a palavra!"<<std::endl;
+    std::cout<<std::endl;
+
+    while(erros < maxErros && !ganhou){
+        std::cout<<"Palvra: ";
+        for(int i = 0; i < advinhada.length(); i++){
+            std::cout<<advinhada[i]<<" ";
+        }
+        std::cout<<std::endl;
+        std::cout<<"Erros: "<<erros<<"/"<<maxErros<<std::endl;
+        std::cout<<std::endl;
+
+        char letra;
+        std::cout<<"Digite uma letra: ";
+        std::cin>>letra;
+        letra = std::tolower(letra);
+
+        std::cout<<std::endl;
+
+        bool encontrou = false;
+
+        for(int i = 0; i < palavra.length(); i++){
+            if(palavra[i] == letra){
+                advinhada[i] = letra;
+                encontrou = true;
+            }
+        }
+        if(!encontrou){
+            std::cout<<"Letra errada!"<<std::endl;
+        }else{
+            std::cout<<"Letra encontrada!"<<std::endl;
+        }
+        std::cout<<std::endl;
+
+        if(advinhada == palavra){
+            ganhou = true;
+        }
+    }
+    std::cout<<"============"<<std::endl;
+    if(ganhou){
+        std::cout<<"Parabéns! Você venceu!"<<std::endl;
+        std::cout<<"A palavra era: "<<palavra<<std::endl;
+    }else{
+        std::cout<<"Game over! Você perdeu!"<<std::endl;
+        std::cout<<"A palavra era: "<<palavra<<std::endl;
+    }
     return 0;
 }
