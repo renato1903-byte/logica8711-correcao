@@ -1,18 +1,15 @@
 #include <iostream>
-#include <string>
 
-int encontrarMaior(int* arr, int tamanho){
-    int maior = arr[0];
-    for(int i = 1; i < tamanho; i++){
-        if(arr[i] > maior){
-            maior = arr[i];
-        }
+int horner(int* coeficiente, int grau, int x){
+    int resultado = coeficiente[grau];
+    for(int i = grau - 1; i >= 0; i--){
+        resultado = resultado * x + coeficiente[i];
     }
-    return maior;
+    return resultado;
 }
 
 int main(){
-    int arr[] = {3, 7, 2, 9, 1, 5};
-    std::cout<<"Maior elemento: "<<encontrarMaior(arr, 6)<<std::endl;
+    int coef[] = {5, 4, 3, 3};
+    std::cout<<"p(2) = "<<horner(coef, 3, 2)<<std::endl;
     return 0;
 }
