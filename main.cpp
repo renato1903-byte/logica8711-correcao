@@ -1,38 +1,37 @@
 #include <iostream>
 #include <string>
 
+struct Jogador{
+    std::string nome;
+    int cartaoAmarelo;
+    int cartaoVermelho;
+};
+
 int main(){
-    std::string time1, time2;
-    int gols1, gols2;
-
-    std::cout<<"===== COMPARADOR DE PLACAR ====="<<std::endl;
+    std::cout<<"===== REGISTRO DE CARTÕES ====="<<std::endl;
     std::cout<<std::endl;
 
-    std::cout<<"Time 1: ";
-    std::cin>>time1;
-    std::cout<<"Gols time 1: ";
-    std::cin>>gols1;
+    Jogador jogador;
 
-    std::cout<<"Time 2: ";
-    std::cin>>time2;
-    std::cout<<"Gols time 2: ";
-    std::cin>>gols2;
+    std::cout<<"Nome do jogador: ";
+    std::cin>>jogador.nome;
+
+    std::cout<<"Cartões amarelos: "<<std::endl;
+    std::cin>>jogador.cartaoAmarelo;
+
+    std::cout<<"Cartões vermelhos: "<<std::endl;
+    std::cin>>jogador.cartaoVermelho;
 
     std::cout<<std::endl;
-    std::cout<<"===== RESULTADO ====="<<std::endl;
-    std::cout<<time1<<" "<<gols1<<" x "<<gols2<<" "<<time2<<std::endl;
-    std::cout<<std::endl;
+    std::cout<<"===== SITUAÇÃO ====="<<std::endl;
 
-        if(gols1 > gols2){
-            std::cout<<"Vencedor: "<<time1<<std::endl;
-            std::cout<<std::endl;
-        }else if(gols2 > gols1){
-            std::cout<<"Vencedor: "<<time2<<std::endl;
-            std::cout<<std::endl;
-        }else{
-            std::cout<<"Empate!"<<std::endl;
-        }
-            
-return 0;
-
+    if(jogador.cartaoVermelho > 0){
+        std::cout<<jogador.nome<<"Foi expulso!"<<std::endl;
+    }else if(jogador.cartaoAmarelo >= 2){
+        std::cout<<jogador.cartaoAmarelo<<" recebeu 2 amarelos e foi expulso!"<<std::endl;
+    }else if(jogador.cartaoAmarelo == 1){
+        std::cout<<jogador.nome<<"Recebou um amarelo. Cuidado!"<<std::endl;
+    }else{
+        std::cout<<jogador.nome<<" está limpo!"<<std::endl;
+    }
 }
