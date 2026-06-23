@@ -1,28 +1,26 @@
 #include <iostream>
 
 int main(){
-    int jogos;
+    int pilha[5];
+    int topo = -1;
+    int tamanho = 5;
 
-    std::cout<<"===== Calculador de público ====="<<std::endl;
+    std::cout<<"===== PILHA ====="<<std::endl;
     std::cout<<std::endl;
 
-    std::cout<<"Quantos jogos?";
-    std::cin>>jogos;
+    pilha[0] = 10;
+    pilha[1] = 20;
+    pilha[2] = 30;
+    topo = 2;
 
-int somaPublico = 0;
+    std::cout<<"Elementos empilhados: 10, 20, 30"<<std::endl;
+    std::cout<<std::endl;
 
-    for(int i = 1; i <= jogos; i++){
-        int publico;
-        std::cout<<"Públivo jogo "<<i<<": ";
-        std::cin>>publico;
-        somaPublico += publico;
+    std::cout<<"Desempilhado..."<<std::endl;
+    while(topo >= 0){
+        std::cout<<"Removida: "<<pilha[topo]<<std::endl;
+        topo--;
     }
-int media = somaPublico / jogos;
-
-std::cout<<std::endl;
-std::cout<<"===== RESULTADO ====="<<std::endl;
-std::cout<<"Média de público: "<<media<<" pessoas"<<std::endl;
-std::cout<<"Total de público: "<<somaPublico<<" pessoa"<<std::endl;
-
-return 0;
+    
+    return 0;
 }
