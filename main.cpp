@@ -2,52 +2,41 @@
 
 int main(){
 
-    int numeros[] = {10, 20, 30, 40, 50, 60, 70, 80};
-    int tamanho = 8;
-    int buscado;
+    int matriz[3][4] = {
+        {10, 25, 5, 40},
+        {15, 8, 30, 12},
+        {20, 3, 18, 35}
+    };
 
-    std::cout<<"===== BUSCAR NÚMERO ====="<<std::endl;
-    std::cout<<std::endl;
+    int maior = matriz[0][0];
+    int menor = matriz[0][0];
+    int linhaM = 0, colunaM = 0;
+    int linhaN = 0, colunaN = 0;
 
-    std::cout<<"Array: ";
-    for(int i = 0; i < tamanho; i++){
-        std::cout<<numeros[i]<<" ";
-    }
-    std::cout<<std::endl;
+    std::cout<<"===== MIN E MAX EM MATRIZ ====="<<std::endl;
 
-    std::cout<<"Digite o numero a buscar: "<<std::endl;
-    std::cin>>buscado;
+    std::cout<<"Matriz:"<<std::endl;
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 4; j++){
+            std::cout<<matriz[i][j]<<"\t";
 
-    int posicao = -1;
+            if(matriz[i][j] > maior){
+                maior = matriz[i][j];
+                linhaM = i;
+                colunaM = j;
+            }
 
-    for(int i = 0; i < tamanho; i++){
-        if(numeros[i] == buscado){
-            posicao = i;
-            break;
+            if(matriz[i][j] < menor){
+                menor = matriz[i][j];
+                linhaN = i;
+                colunaN = j;
+            }
         }
+        std::cout<<std::endl;
     }
 
-    std::cout<<std::endl;
-    if(posicao != -1){
-        std::cout<<"Encontrado na posição "<<std::endl;
-    }else{
-        std::cout<<"Não encontrado!"<<std::endl;
-    }
+    std::cout<<"Maior valor: "<<maior<<" na posicao ["<<linhaM<<"]["<<colunaM<<"]"<<std::endl;
+    std::cout<<"Menor valor: "<<menor<<" na posicao ["<<linhaN<<"]["<<colunaN<<"]"<<std::endl;
+
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
