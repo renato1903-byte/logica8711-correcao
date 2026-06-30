@@ -3,21 +3,18 @@
 int main(){
 
     int numeros[5];
+    int soma;
+    float media;
 
     for(int i = 0; i < 5; i++){
-        std::cout<<"Digite o "<<i + 1<<" numero: ";
+        std::cout<<"Digite o "<<i + 1<<"numero: "<<std::endl;
         std::cin>>numeros[i];
+        soma += numeros[i];
     }
 
-    int menor = numeros[0];
+    media = soma / 5.0;
 
-    for(int i = 1; i < 5; i++){
-        if(numeros[i] < menor){
-           menor = numeros[i];
-        }
-    }
-
-    std::cout<<"Maior numero: "<<menor<<std::endl;
+    std::cout<<"\nMédia do valores: "<<media<<std::endl;
 
     return 0;
 }
