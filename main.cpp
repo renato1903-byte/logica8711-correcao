@@ -1,20 +1,22 @@
 #include <iostream>
 
-int main(){
+int main() {
 
     int numeros[5];
-    int soma;
-    float media;
+    int pares = 0;
 
-    for(int i = 0; i < 5; i++){
-        std::cout<<"Digite o "<<i + 1<<"numero: "<<std::endl;
-        std::cin>>numeros[i];
-        soma += numeros[i];
+    for (int i = 0; i < 5; i++) {
+        std::cout << "Digite o " << i + 1 << " numero: ";
+        std::cin >> numeros[i];
     }
 
-    media = soma / 5.0;
+    for (int i = 0; i < 5; i++) {
+        if (numeros[i] % 2 == 0) {
+            pares++;
+        }
+    }
 
-    std::cout<<"\nMédia do valores: "<<media<<std::endl;
+    std::cout << "\nQuantidade de numeros pares: " << pares << std::endl;
 
     return 0;
 }
