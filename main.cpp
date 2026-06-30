@@ -9,15 +9,15 @@ int main(){
         std::cin>>numeros[i];
     }
 
-    int maior = numeros[0];
+    int menor = numeros[0];
 
     for(int i = 1; i < 5; i++){
-        if(numeros[i] > maior){
-            maior = numeros[i];
+        if(numeros[i] < menor){
+           menor = numeros[i];
         }
     }
 
-    std::cout<<"Maior numero: "<<maior<<std::endl;
+    std::cout<<"Maior numero: "<<menor<<std::endl;
 
     return 0;
 }
