@@ -1,42 +1,19 @@
 #include <iostream>
 
 int main(){
+    
+    int numeros[5];
 
-    int matriz[3][4] = {
-        {10, 25, 5, 40},
-        {15, 8, 30, 12},
-        {20, 3, 18, 35}
-    };
-
-    int maior = matriz[0][0];
-    int menor = matriz[0][0];
-    int linhaM = 0, colunaM = 0;
-    int linhaN = 0, colunaN = 0;
-
-    std::cout<<"===== MIN E MAX EM MATRIZ ====="<<std::endl;
-
-    std::cout<<"Matriz:"<<std::endl;
-    for(int i = 0; i < 3; i++){
-        for(int j = 0; j < 4; j++){
-            std::cout<<matriz[i][j]<<"\t";
-
-            if(matriz[i][j] > maior){
-                maior = matriz[i][j];
-                linhaM = i;
-                colunaM = j;
-            }
-
-            if(matriz[i][j] < menor){
-                menor = matriz[i][j];
-                linhaN = i;
-                colunaN = j;
-            }
-        }
-        std::cout<<std::endl;
+    for(int i = 0; i < 5; i++){
+        std::cout<<"Digite o "<<i + 1<<"número: "<<std::endl;
+        std::cin>>numeros[i];
     }
 
-    std::cout<<"Maior valor: "<<maior<<" na posicao ["<<linhaM<<"]["<<colunaM<<"]"<<std::endl;
-    std::cout<<"Menor valor: "<<menor<<" na posicao ["<<linhaN<<"]["<<colunaN<<"]"<<std::endl;
+    std::cout<<"\nNúmeros informados"<<std::endl;
 
+    for(int i = 0; i < 5; i++){
+        std::cout<<numeros[i]<<std::endl;
+    }
+    
     return 0;
 }
