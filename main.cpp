@@ -1,22 +1,31 @@
 #include <iostream>
+#include <vector>
 
 int main() {
+    
+    std::vector<int>numeros;
 
-    int numeros[10];
-    int contador = 0;
+    std::cout<<"===== VECTOR (Arraylist em C++)"<<std::endl;
 
-    for(int i = 0; i < 10; i++){
-        std::cout << "Digite o " << i + 1 << " numero: ";
-        std::cin >> numeros[i];
+    numeros.push_back(10);
+    numeros.push_back(20);
+    numeros.push_back(30);
+
+    std::cout<<"Numeros: ";
+    for(int i = 0; i < numeros.size(); i++){
+        std::cout<<numeros[i]<<" ";
     }
+    std::cout<<std::endl;
 
-    for(int i = 0; i < 10; i++){
-        if(numeros[i] == 5){
-            contador++;
-        }
+    std::cout<<"Tamanho: "<<numeros.size()<<std::endl;
+
+    numeros.pop_back();
+
+
+
+    std::cout<<"Após remover o último: ";
+    for(int i = 0; i < numeros.size(); i++){
+        std::cout<<numeros[i]<<" ";
     }
-
-    std::cout << "\nO numero 5 aparece " << contador << " vez(es)." << std::endl;
-
     return 0;
 }
