@@ -19,7 +19,10 @@ int main() {
 
     std::cout<<"Tamanho: "<<numeros.size()<<std::endl;
 
-    numeros.pop_back();
+    int posicao = 2;
+    std::cout<<"Digite uma posição: "<<std::endl;
+    numeros.erase(numeros.begin() + posicao);
+
 
 
 
