@@ -4,15 +4,16 @@
 using namespace std;
 
 int main() {
-   string palavra;
-  
+   int idade;
 
-   std::cout<<"Digite uma palavra: "<<std::endl;
-   std::cin>>palavra;
+   std::cout<<"Digite sua idade: "<<std::endl;
+   std::cin>>idade;
 
-
-   std::cout<<"A palavra digitada foi: "<<palavra<<std::endl;
-   std::cout<<"A primeira letra é: "<<palavra[0]<<std::endl; 
+   if(idade >= 18){
+    std::cout<<"Você é maior de idade."<<std::endl;
+   }else{
+    std::cout<<"Você é menor de idade."<<std::endl;
+   }
    
 
    
@@ -33,5 +34,4 @@ int main() {
 
 
 
-// quero que o usuario coloque uma palavra, e essa palavra seja apresentada com um cout.. 
-// tambem quero que mostre qual foia primeira letra da palavra, usando apenas uma variavel
+// 
