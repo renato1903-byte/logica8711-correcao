@@ -3,32 +3,17 @@
 using namespace std;
 
 int main() {
-   int opcao;
+    float nota;
 
-   std::cout<<"===== MINI MENU ====="<<std::endl;
-   std::cout<<"1 - Iniciar sistema"<<std::endl;
-   std::cout<<"2 - Abrir configuracoes"<<std::endl;
-   std::cout<<"3 - Sair"<<std::endl;
-   std::cin>>opcao;
-   
-   switch(opcao){
-    
-    case 1:
-    std::cout<<"Iniciando o sistema..."<<std::endl;
-        break;
-
-    case 2: 
-    std::cout<<"Abrindo configuracoes..."<<std::endl;
-        break;
-
-    case 3: 
-    std::cout<<"Saindo... Ate logo!"<<std::endl;
-        break;
-
-    default:
-    std::cout<<"Opcao invalida!"<<std::endl;
-
-   }
+        do
+        {
+            
+            std::cout<<"Digite uma nota entre 0 a 10: "<<std::endl;
+            std::cin>>nota;
+        }
+        
+        while(nota < 0 || nota > 10);
+        std::cout<<"Nota "<<nota<<" registrada."<<std::endl;
    
     return 0;
 
