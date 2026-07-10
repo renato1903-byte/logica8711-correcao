@@ -3,33 +3,14 @@
 using namespace std;
 
 int main() {
-    float nota;
+    int numeros[5] = {10, 20, 30, 40, 50};
 
-        do
-        {
-            
-            std::cout<<"Digite uma nota entre 0 a 10: "<<std::endl;
-            std::cin>>nota;
-        }
-        
-        while(nota < 0 || nota > 10);
-        std::cout<<"Nota "<<nota<<" registrada."<<std::endl;
+    std::cout<<"Numeros do array:"<<std::endl;
+
+    for(int i = 0; i < 5; i++){
+        std::cout<<numeros[i]<<std::endl;
+    }
    
     return 0;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 
