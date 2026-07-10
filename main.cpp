@@ -3,14 +3,8 @@
 using namespace std;
 
 int main() {
-    int numeros[5] = {10, 20, 30, 40, 50};
-
-    std::cout<<"Numeros do array:"<<std::endl;
-
-    for(int i = 0; i < 5; i++){
-        std::cout<<numeros[i]<<std::endl;
-    }
-   
+    string palavras[5] = {"Casa", "Carro", "Livro", "Mesa", "Computador"};
+    std::cout<<"Quinta palavra: "<<palavras[4]<<std::endl;
     return 0;
 
 }
