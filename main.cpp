@@ -2,16 +2,18 @@
 
 using namespace std;
 
-int triplo(int numero){
-    return numero * 3;
+int cubo(int numero){
+    return numero * numero * numero;
 }
 
 int main() {
     int numero;
-     std::cout<<"Digite um numero: ";
-     std::cin>>numero;
 
-     std::cout<<"O triplo de "<<numero<<" e: "<<triplo(numero)<<std::endl;
+    std::cout<<"Digite um numero: ";
+    std::cin>>numero;
+    
+    std::cout<<"O cubo de: "<<numero<<" e: "<<cubo(numero)<<std::endl;
+
     return 0;
 
 }
