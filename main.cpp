@@ -2,18 +2,17 @@
 
 using namespace std;
 
-int cubo(int numero){
-    return numero * numero * numero;
-}
 
 int main() {
-    int numero;
+    const float PI = 3.14;
+    float raio, area;
 
-    std::cout<<"Digite um numero: ";
-    std::cin>>numero;
-    
-    std::cout<<"O cubo de: "<<numero<<" e: "<<cubo(numero)<<std::endl;
+    std::cout<<"Digite o raio do circulo: ";
+    std::cin>>raio;
 
+    area = PI * (raio * raio);
+
+    std::cout<<"Area do circulo: "<<area<<std::endl;
     return 0;
 
 }
