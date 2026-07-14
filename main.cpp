@@ -2,9 +2,16 @@
 
 using namespace std;
 
+int triplo(int numero){
+    return numero * 3;
+}
+
 int main() {
-    string palavras[5] = {"Casa", "Carro", "Livro", "Mesa", "Computador"};
-    std::cout<<"Quinta palavra: "<<palavras[4]<<std::endl;
+    int numero;
+     std::cout<<"Digite um numero: ";
+     std::cin>>numero;
+
+     std::cout<<"O triplo de "<<numero<<" e: "<<triplo(numero)<<std::endl;
     return 0;
 
 }
