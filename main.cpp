@@ -1,18 +1,16 @@
 #include <iostream>
 
-using namespace std;
-
-
 int main() {
-    const float PI = 3.14;
-    float raio, area;
+    int numero;
 
-    std::cout<<"Digite o raio do circulo: ";
-    std::cin>>raio;
+    std::cout<<"Digite um numero para ver a tabuada: ";
+    std::cin>>numero;
 
-    area = PI * (raio * raio);
+    std::cout<<"\nTabuada do "<<numero<<":\n";
 
-    std::cout<<"Area do circulo: "<<area<<std::endl;
+    for(int i = 1; i <= 10; i++){
+        std::cout<<numero<<" x "<<i<<" = "<<numero * i<<"\n";
+    }
     return 0;
 
 }
