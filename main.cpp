@@ -3,27 +3,17 @@
 using namespace std;
 
 int main() {
-    int numero;
-    bool primo = true;
+    int num, maior;
 
-    std::cout<<"Digite um numero: ";
-    std::cin>>numero;
+    for(int i = 1; i <= 5; i++){
+        std::cout<<"Digite um numero: ";
+        std::cin>>num;
 
-    if(numero <= 1){
-        primo = false;
-    }else{
-        for(int i = 2; i < numero; i++){
-            if(numero % i == 0){
-                primo = false;
-                break;
-            }
+        if(i == 1 || num > maior){
+            maior = num;
         }
     }
-    if(primo){
-        std::cout<<"e um numero primo."<<std::endl; 
-    }else{
-        std::cout<<"nao e um numero primo."<<std::endl;
-    }
+    std::cout<<"O maior numero e: "<<maior<<std::endl;
     return 0;
 
 }
