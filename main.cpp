@@ -3,15 +3,27 @@
 using namespace std;
 
 int main() {
-    int contador = 0;
+    int numero;
+    bool primo = true;
 
-    for(int i = 1; i <= 100; i++){
-       if( i % 2 == 0){
-        contador++;
-       }
+    std::cout<<"Digite um numero: ";
+    std::cin>>numero;
+
+    if(numero <= 1){
+        primo = false;
+    }else{
+        for(int i = 2; i < numero; i++){
+            if(numero % i == 0){
+                primo = false;
+                break;
+            }
+        }
     }
-    std::cout<<"Existem: "<<contador<<std::endl;
-
+    if(primo){
+        std::cout<<"e um numero primo."<<std::endl; 
+    }else{
+        std::cout<<"nao e um numero primo."<<std::endl;
+    }
     return 0;
 
 }
