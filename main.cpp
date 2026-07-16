@@ -3,17 +3,16 @@
 using namespace std;
 
 int main() {
-    int num, maior;
+    float num, soma = 0, media;
 
     for(int i = 1; i <= 5; i++){
         std::cout<<"Digite um numero: ";
         std::cin>>num;
-
-        if(i == 1 || num > maior){
-            maior = num;
-        }
+        soma += num;
     }
-    std::cout<<"O maior numero e: "<<maior<<std::endl;
+    media = soma / 5;
+
+    std::cout<<"A media e: "<<media<<std::endl;
     return 0;
 
 }
