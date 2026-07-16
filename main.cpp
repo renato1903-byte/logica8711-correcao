@@ -3,16 +3,19 @@
 using namespace std;
 
 int main() {
-    float num, soma = 0, media;
+    float num, contador = 0;
 
-    for(int i = 1; i <= 5; i++){
+    for(int i = 1; i <= 10; i++){
         std::cout<<"Digite um numero: ";
         std::cin>>num;
-        soma += num;
+        
+        if(num > 50){
+            contador++;
+        }
     }
-    media = soma / 5;
+    
 
-    std::cout<<"A media e: "<<media<<std::endl;
+    std::cout<<"Quantidade de numero maior que 50: "<<contador<<std::endl;
     return 0;
 
 }
