@@ -1,21 +1,28 @@
 #include <iostream>
-
+#include <vector>
 using namespace std;
 
 int main() {
-    float num, contador = 0;
+    int vetor[8];
 
-    for(int i = 1; i <= 10; i++){
-        std::cout<<"Digite um numero: ";
-        std::cin>>num;
-        
-        if(num > 50){
-            contador++;
-        }
+    // Leitura dos números
+    for (int i = 0; i < 8; i++) {
+        std::cout<<"Digite o "<< i + 1 <<"º numero: ";
+        std::cin>>vetor[i];
     }
-    
 
-    std::cout<<"Quantidade de numero maior que 50: "<<contador<<std::endl;
+    // Ordem original
+    cout << "\nOrdem original: ";
+    for (int i = 0; i < 8; i++) {
+        std::cout<<vetor[i]<<" ";
+    }
+
+    // Ordem invertida
+    std::cout<<"\nOrdem invertida: ";
+    for (int i = 7; i >= 0; i--) {
+        std::cout<<vetor[i]<<" ";
+    }
+
     return 0;
-
 }
+    
